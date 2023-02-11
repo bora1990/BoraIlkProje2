@@ -1,0 +1,37 @@
+﻿@using Identtity2.Models.ViewModels
+@model UserViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+}
+
+<h3 class="text-center">Kullanıcı Bilgileri</h3>
+
+<div class="row">
+    <div class="col-sm-3 offset-md-3">
+        <img width="100%" height="100%" src="~/resimler/xa.jpg" />
+    </div>
+    <div class="col-sm-9">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Email</th>
+                    <th>Telefon No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>@Model.UserName</td><td>@Model.Email</td><td>@Model.PhoneNumber</td></tr>
+
+            </tbody>
+          
+
+        </table>
+
+
+
+    </div>
+    
+</div>

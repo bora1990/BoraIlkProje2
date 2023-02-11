@@ -1,0 +1,83 @@
+﻿@model List<Product>;
+
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Member/_MemberLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Siparis Ekranı</title>
+
+    <style>
+
+        .card {
+            width: 300px;
+            background-color: khaki
+        }
+    </style>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="row">
+
+        <div class="col-6 d-flex flex-wrap">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <p style="display:none;">@item.Id</p>
+
+                    <img src="~/Resimler/images/@item.ImageName" width="300px" height="300px" class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">@item.ProductName</h5>
+
+                        <p class="card-text">@item.Price</p>
+                        <a onclick="sepeteEkle(this);" class="btn btn-primary">Listeye Al</a>
+                        <input type="number" value="Adet" min="0" />
+
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-6">
+
+            <table class="table caption-top">
+                <caption><h2>Sepet</h2></caption>
+                <thead>
+
+                    <tr>
+                        <th scope="col">ProductName</th>
+                        <th scope="col">Adet</th>
+                        <th scope="col">Price</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <a onclick="satinal(this);" class="btn btn-success">Satin Al</a>
+        </div>
+
+    </div>
+
+    <a href="#top">Sayfanın üst kısmına git</a>
+
+    <script src="~/js/siparis.js" asp-append-version="true"></script>
+    <script src="~/js/sepet.js" asp-append-version="true"></script>
+    <script src="~/js/yukari.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
+
+

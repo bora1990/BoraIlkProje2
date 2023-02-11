@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "RoleUpdate";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+@model RoleUpdateVM
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        @if(ViewData["Success"]!=null){
+
+            <div class="alert alert-info" role="alert">
+                @ViewData["Success"]
+                   
+            </div>
+        }
+
+
+        <form asp-action="RoleUpdate" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <input type="hidden" asp-for="Id" />
+
+
+
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Rol Listesine Geri Dön</a>
+</div>
+

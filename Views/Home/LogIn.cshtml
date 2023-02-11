@@ -1,0 +1,34 @@
+﻿@model BoraIlkProje2.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "LogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kullanıcı Giriş Sayfası</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Home" asp-action="LogIn" method="POST">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div style="margin:10px" class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div style="margin:10px" class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div style="margin:10px" class="form-group">
+                <input type="submit" value="Devam" class="btn btn-primary" />
+            </div>
+            <div>
+                <a class="btn btn-link" asp-controller="Home" asp-action="ForgetPassword">Şifremi Unuttum</a>
+            </div>
+        </form>
+    </div>
+</div>
