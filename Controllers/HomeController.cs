@@ -191,6 +191,10 @@ namespace BoraIlkProje2.Controllers
         {
             return View();
         }
+        public IActionResult OrderWithApi()
+        {
+            return View();
+        }
     }
 }
 
